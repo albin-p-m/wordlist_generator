@@ -19,10 +19,10 @@ void main(){
         int i = 0;                                                 //variable to iterate through characater array
         for(characters[i] = ' '; characters[i] != '\0'; i++){
             strncat(word, character[i]);
-            for(char j = 'a'; word.length != limit; j++){
-                word += j;
+            if(strlen(word) > 12){
+                break;
             }
-            printf("%s",word);
+            printf("\n%s",word);
         }
         limit++;
     }
