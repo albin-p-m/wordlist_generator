@@ -14,15 +14,19 @@ void main(){
         characters[j] = ch;
         j++;
     }
+    printf("%s",characters);
 
     while(limit > 7 && limit < 13){
         int i = 0;                                                 //variable to iterate through characater array
-        for(characters[i] = ' '; characters[i] != '\0'; i++){
-            strncat(word, characters[i], 1);
+        while(characters[i] != '\0'){
+            char temp = characters[i];
+            strcat(word, &temp);
             if(strlen(word) > 12){
+                printf("\n%s",word);
                 break;
             }
-            printf("\n%s",word);
+            i++;
+            
         }
         limit++;
     }
