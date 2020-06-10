@@ -18,7 +18,7 @@ void main(){
     while(limit > 7 && limit < 13){
         int i = 0;                                                 //variable to iterate through characater array
         for(characters[i] = ' '; characters[i] != '\0'; i++){
-            strncat(word, character[i]);
+            strncat(word, characters[i], 1);
             if(strlen(word) > 12){
                 break;
             }
