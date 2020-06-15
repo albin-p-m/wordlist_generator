@@ -39,7 +39,7 @@ void main(){
             }
 
             word[limit] = characters[i];
-            printf("%s\n", word);
+            printf("%s\n", word); 
 
             
         }
