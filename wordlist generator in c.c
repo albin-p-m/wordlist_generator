@@ -13,6 +13,7 @@ void main(){
     }
     printf("\n\n%s\n\n",characters);
 
+    next:
     for(int i = 0; i < limit; i++){                 //initialize the word array with the first character in character array.
         word[i] = characters[0];
     }
@@ -56,6 +57,7 @@ void main(){
             goto label;
         }else{
             limit++;
+            goto next;
         }
     }
 }
