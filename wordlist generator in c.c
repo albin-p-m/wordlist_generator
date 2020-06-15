@@ -17,8 +17,8 @@ void main(){
         word[i] = characters[0];
     }
 
-    while((limit == 8)){ //&& (limit < 13)){
-        int last = limit, i, wordselector, charselector;
+    while((limit > 7) && (limit < 13)){
+        int i, wordselector, charselector;
         label:
 
         for(i = 0; i < count; i++){
@@ -31,6 +31,15 @@ void main(){
 
                         if(word[wordselector] == characters[charselector]){
                             word[wordselector] = characters[charselector + 1];
+                            
+                            if((wordselector != limit) && (wordselector != (limit - 1))){
+
+                                for (int k = wordselector; k < limit; k++)
+                                {
+                                    word[k + 1] = characters[0];    
+                                }
+                                
+                            }
                             break;
                         }
                     }
