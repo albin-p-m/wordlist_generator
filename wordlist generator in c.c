@@ -17,24 +17,29 @@ void main(){
         word[i] = characters[0];
     }
 
-    while((limit > 7)){ //&& (limit < 13)){
-        int last = limit;
-        for(int i = 0; i < count; i++){
+    while((limit == 8)){ //&& (limit < 13)){
+        int last = limit, i, j, k;
+        label:
+        for(i = 0; i < count; i++){
+
             word[limit] = characters[i];
             printf("%s\n", word);
-            for(int j = limit; j >= 0; j--){
+            for(j = limit; j >= 0; j--){
                 if(word[j] != characters[count - 1]){
-                    for(int k = 0; k < count; k++){
+                    for(k = 0; k < count; k++){
                         if(word[j] == characters[k]){
                             word[j] = characters[k + 1];
+                            break;
                         }
                     }
                     break;
                 }
             }
         }
-        if(word[0] == characters[count]){
-        limit++;
+        if(word[0] != characters[count - 1]){
+            goto label;
+        }else{
+            limit++;
         }
         break;
     }
