@@ -4,7 +4,7 @@
 void main(){
     char characters[100];                           //the character set generated
     char word[13];                                  //the word generated
-    int limit = 8, count = 0;                       //initial limit of the word generated and a counting variable for knowing the last index of character array
+    int limit = 8, count = 0;                       //initial limit of the word generated and a counting variable for charselectornowing the last index of character array
 
     for(int i = 32; i < 127; i++){                  //for getting whole characters into the word array
         char ch = i;
@@ -18,29 +18,35 @@ void main(){
     }
 
     while((limit == 8)){ //&& (limit < 13)){
-        int last = limit, i, j, k;
+        int last = limit, i, wordselector, charselector;
         label:
+
         for(i = 0; i < count; i++){
 
-            word[limit] = characters[i];
-            printf("%s\n", word);
-            for(j = limit; j >= 0; j--){
-                if(word[j] != characters[count - 1]){
-                    for(k = 0; k < count; k++){
-                        if(word[j] == characters[k]){
-                            word[j] = characters[k + 1];
+            for(wordselector = limit; wordselector >= 0; wordselector--){
+
+                if(word[wordselector] != characters[count - 1]){
+
+                    for(charselector = 0; charselector < count; charselector++){
+
+                        if(word[wordselector] == characters[charselector]){
+                            word[wordselector] = characters[charselector + 1];
                             break;
                         }
                     }
                     break;
                 }
             }
+
+            word[limit] = characters[i];
+            printf("%s\n", word);
+
+            
         }
         if(word[0] != characters[count - 1]){
             goto label;
         }else{
             limit++;
         }
-        break;
     }
 }
